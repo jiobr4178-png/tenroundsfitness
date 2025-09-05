@@ -43,10 +43,10 @@ const Navbar = () => {
               </span>
             </div>
             <div>
-              <span className={`font-display text-xl ${!isScrolled ? 'text-white' : 'text-foreground'}`}>
+              <span className={`font-display text-xl ${!isScrolled && location.pathname === '/' ? 'text-white' : 'text-foreground'}`}>
                 10 ROUNDS
               </span>
-              <span className={`block text-xs uppercase tracking-wider ${!isScrolled ? 'text-white/80' : 'text-muted-foreground'}`}>
+              <span className={`block text-xs uppercase tracking-wider ${!isScrolled && location.pathname === '/' ? 'text-white/80' : 'text-muted-foreground'}`}>
                 of Fitness
               </span>
             </div>
@@ -61,7 +61,7 @@ const Navbar = () => {
                   className={`${
                     location.pathname === link.path 
                       ? "text-primary" 
-                      : !isScrolled 
+                      : !isScrolled && location.pathname === '/'
                         ? "text-white hover:text-white/80" 
                         : ""
                   }`}
@@ -79,7 +79,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden ${!isScrolled ? 'text-white' : 'text-foreground'}`}
+            className={`lg:hidden ${!isScrolled && location.pathname === '/' ? 'text-white' : 'text-foreground'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
