@@ -87,8 +87,10 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 animate-fade-up">
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="py-4 bg-background/95 backdrop-blur-md border-t border-border">
             <div className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <Link
@@ -98,7 +100,7 @@ const Navbar = () => {
                 >
                   <Button
                     variant="ghost"
-                    className={`w-full justify-start ${
+                    className={`w-full justify-start text-foreground ${
                       location.pathname === link.path ? "text-primary" : ""
                     }`}
                   >
@@ -113,7 +115,7 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
