@@ -32,10 +32,10 @@ const About = () => {
   return (
     <main className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-dark">
+      <section className="py-20 gradient-hero">
         <div className="container mx-auto px-4">
           <h1 className="font-display text-5xl md:text-6xl text-primary-foreground text-center mb-6">
-            ABOUT <span className="text-primary">10 ROUNDS</span>
+            ABOUT <span className="text-secondary">10 ROUNDS</span>
           </h1>
           <p className="text-xl text-primary-foreground/90 text-center max-w-3xl mx-auto">
             More than just a gym - we're a community dedicated to helping you become the strongest version of yourself.
