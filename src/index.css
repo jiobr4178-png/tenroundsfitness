@@ -125,6 +125,18 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
   }
+
+  /* Prevent horizontal overflow on mobile */
+  html, body, #root {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Extra safety for common layout wrappers */
+  main, nav, footer {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
 }
 
 @layer utilities {
